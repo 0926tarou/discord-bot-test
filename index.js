@@ -58,7 +58,6 @@ console.log('DISCORD_BOT_TOKENが設定されていません。');
 process.exit(0);
 }
 
-console.log(process.env.DISCORD_BOT_TOKEN);
 client.login( process.env.DISCORD_BOT_TOKEN );
 
 function sendReply(message, text){
