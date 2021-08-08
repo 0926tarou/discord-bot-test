@@ -33,7 +33,6 @@ client.on('messageCreate', message =>{
    var min = 1 ;
    var max = 5 ;
    var a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-   sendMsg(message.channel.id, a);
    switch (a){
      case 1:
        sendMsg(message.channel.id, "大吉だぁぁぁぁ");
