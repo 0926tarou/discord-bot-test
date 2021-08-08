@@ -16,7 +16,7 @@ client.on('ready', message =>{
 });
 
 client.on('messageCreate', message =>{
-  console.log("ころな");
+  console.log("メッセージ受信: " + message.content);
  if (message.author.id == client.user.id){
    return;
  }
@@ -25,16 +25,14 @@ client.on('messageCreate', message =>{
    return;
  }
  if (message.content.match(/にゃ～ん|にゃーん/)){
-   let text = "にゃ～ん";
-   sendMsg(message.channel.id, text);
+   sendMsg(message.channel.id, "にゃ～ん");
    return;
  }
  if (message.content.match(/おみくじ/)){
-   var min = 1 ;
-   var max = 5 ;
-   var a = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-   sendMsg(message.channel.id, a);
-   switch (a){
+   const min = 1;
+   const max = 5;
+   const randomNumber = Math.floor( Math.random() * (max + 1 - min) ) + min;
+   switch (randomNumber){
      case 1:
        sendMsg(message.channel.id, "大吉だぁぁぁぁ");
        break;
@@ -60,7 +58,6 @@ console.log('DISCORD_BOT_TOKENが設定されていません。');
 process.exit(0);
 }
 
-console.log(process.env.DISCORD_BOT_TOKEN);
 client.login( process.env.DISCORD_BOT_TOKEN );
 
 function sendReply(message, text){
