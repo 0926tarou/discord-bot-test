@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/0926tarou/discord-bot-test/issues"
   },
-  "homepage": "https://github.com/0926tarou/discord-bot-test#readme"
+  "homepage": "https://github.com/0926tarou/discord-bot-test#readme",
+  "dependencies": {
+    "discord.js": "^13.0.1"
+  }
 }
