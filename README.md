@@ -1,5 +1,6 @@
 # discord-bot-test
 
+
 ## このBotについて
 DiscordBot作成に関する練習
 
@@ -8,3 +9,4 @@ DiscordBot作成に関する練習
 '''
 $ node index.js
 '''
+終了時はコンソール内にて止める ctrl+c
