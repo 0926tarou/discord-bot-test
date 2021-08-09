@@ -1,20 +1,16 @@
-console.log("hallo world.");
-
-//glitchからの抜粋
 const http = require('http');
 const querystring = require('querystring');
 const { Client, Intents } = require('discord.js');
-
-require('dotenv').config();//追加
-
+require('dotenv').config();
 const client = new Client({ intents: [Intents.FLAGS.GUILDS,Intents.FLAGS.GUILD_MESSAGES] });
 
-
+//ターミナル上の起動確認
 client.on('ready', message =>{
  console.log('Bot準備完了～');
  client.user.setPresence({ activity: { name: 'げーむ' } });
 });
 
+//指定ワードに対する返答
 client.on('messageCreate', message =>{
   console.log("メッセージ受信: " + message.content);
  if (message.author.id == client.user.id){
@@ -71,5 +67,3 @@ function sendMsg(channelId, text, option={}){
    .then(channel => channel.send(text, option))
    .catch(console.error);
 }
-
-//抜粋ここまで
