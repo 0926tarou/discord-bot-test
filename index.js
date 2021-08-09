@@ -47,7 +47,7 @@ client.on('messageCreate', message =>{
    }
    return;
  }
- if (message.isMemberMentioned(client.user) && message.member.voiceChannel){
+ /*if (message.isMemberMentioned(client.user) && message.member.voiceChannel){
     message.member.voiceChannel.join().then( connection => {
       const dispatcher = connection.playFile('test.mp3');
       dispatcher.on('end', reason => {
@@ -56,7 +56,7 @@ client.on('messageCreate', message =>{
     })
     .catch(console.log);
     return;
-  }
+  }*/
 });
 
 if(process.env.DISCORD_BOT_TOKEN == undefined){
