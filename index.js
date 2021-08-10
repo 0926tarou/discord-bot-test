@@ -10,9 +10,10 @@ let RepText = "";
 
 //ターミナル上の起動確認
 client.on('ready', message =>{
- console.log('Bot準備完了～');
- //起動確認用 sendMsg(message.channels.id, "起きましたぁ");
- client.user.setPresence({ activity: { name: 'げーむ' } });
+  console.log('Bot準備完了～');
+  //起動確認用 sendMsg(message.channels.id, "起きましたぁ");
+  //Ver古いので確認する
+  client.user.setPresence({ activity: { name: 'げーむ' } });
 });
 
 //指定ワードに対する返答
