@@ -6,13 +6,9 @@ require('dotenv').config();
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS,Intents.FLAGS.GUILD_MESSAGES] });
 
-//Bot側で返すテキスト
-let RepText = "";
-
 //ターミナル上の起動確認
 client.on('ready', _ =>{
   console.log('Bot準備完了～');
-  //起動確認用 sendMsg(message.channels.id, "起きましたぁ");
   if(client.user == null){
     console.log("error: client.user が null でした");
     return
@@ -22,6 +18,8 @@ client.on('ready', _ =>{
 
 //指定ワードに対する返答
 client.on('messageCreate', message =>{
+  //Bot側で返すテキスト
+  let RepText = "";
 
   if(client.user == null){
     console.log("error: client.user が null でした");
@@ -61,14 +59,14 @@ client.on('messageCreate', message =>{
     }
     //Bot側のテキスト送信をターミナル上で表示
     console.log("ランダムNo. " + randomNumber);
-    console.log(RepText);
+    console.log("メッセージ送信：" + RepText);
     //おみくじ結果を返信
     sendMsg(message.channel, RepText);
     return;
   }
 });
 
-//この処理何？
+//Botをオンラインにする？
 client.login( process.env.DISCORD_BOT_TOKEN );
 
 //Bot側のリプライをターミナル上で表示
@@ -79,6 +77,6 @@ function sendReply(message: Message, text: string){
 }
 
 //この処理何？
-function sendMsg(channel: TextBasedChannels , text: string){
+function sendMsg(channel:TextBasedChannels, text: string){
   channel.send(text)
 }
